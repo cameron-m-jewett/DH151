@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World</title>
+    <meta charset="utf-8" />
+ 
+    <!-- style sheets -->
+    <link rel="stylesheet" href="css/style.css">
+ 
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+ 
+</head>
+<body>
+ 
+    <div class="header">
+        Hello World, but specifically hello to UCLA's DH151
+    </div>
+    <div class="sidebar">
+        Map of some relevant locations to my recent life
+    </div>
+    <div class="content">
+        <div id="map"></div>
+    </div>
+ 
+    <script>
+        var map = L.map('map').setView([47.47,-122.400], 11);
+ 
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+ 
+        var marker1 = L.marker([47.4982,-122.4779]).addTo(map)
+            .bindPopup('Vashon Island<br> Where Cameron is sitting this very moment')
+           
+ 
+        var marker2 = L.marker([47.5096,-122.46404]).addTo(map)
+            .bindPopup('Vashon Island Ferry Terminal<br> Where Cameron will get on a boat at 4am tomorrow')
+           
+ 
+        var marker3 = L.marker([47.443558,-122.3000149]).addTo(map)
+            .bindPopup('SeaTac Airport<br> Where Cameron will fly to LA just in time for DH151 tomorrow')
+           
+    </script>
+</body>
+</html>
