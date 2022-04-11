@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cameron's Journies</title>
+    <meta charset="utf-8" />
+ 
+    <!-- style sheets -->
+    <link rel="stylesheet" href="css/style.css">
+ 
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+ 
+</head>
+<body>
+ 
+    <div class="header">
+        Cameron Ranks Airports    
+    </div>
+    <div class="sidebar">
+        <body>
+            <p><b>Author Note:</b> <i>Don't actually base your opinions of these airports on any of this. All of this is based on 
+                my own silly experience in these airports. All of these airports are great.</i></p>
+            <p>Airports:
+                <ol>
+                    <li>LAX, <i>Los Angeles, CA, United States</i></li>
+                    <li>Seatac Airport, <i>Seattle, WA, United States</i></li>
+                    <li>Changi Airport, <i>Singapore</i></li>
+                    <li>Charles De Gaulle, <i>Paris, France</i></li>
+                    <li>Will Rogers World Airport, <i>Oklahoma City, OK, United States</i></li>
+                    <li>Narita Intl. Airport, <i>Narita, Chiba, Japan</i></li>
+                    <li>Keflavik Intl. Airport, <i>Keflavik, Iceland</i></li>
+                </ol>
+
+            </p>
+        </body>
+    </div>
+    <div class="content">
+        <div id="map"></div>
+    </div>
+ 
+    <script>
+        var map = L.map('map').setView([47.47,-122.400], 3);
+ 
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            let airplane = L.icon({
+                iconUrl: 'airplane.png', 
+                iconSize: [50, 50]
+            });
+
+            let airports = [
+	{
+		'title':'LAX',
+		'lat': 33.9438347,
+		'lon': -118.4088622,
+        'description': '5/10. Somehow always make it on time for my flight, but it never feels like I will. The traffic at LAX is legendarily bad. Security is always faster than expected though.'
+	},
+	{
+		'title':'Seatac Airport',
+		'lat': 47.443558,
+		'lon': -122.3000149,
+        'description': '7.5/10. Had to give it extra points because it is my home airport. Security lines can take way too long, but I like the vibes of Seatac a lot. And environmentally it is a pretty sustainable airport.'
+	},
+	{
+		'title':'Changi Airport',
+		'lat': 1.3658211,
+		'lon': 103.9921111,
+        'description': '9.5/10. This is maybe the best airport I have been to. Awesome vibes, there are a ton of food options, the lines never take very long. Great airport.'
+	},
+	{
+		'title':'Charles De Gaulle',
+		'lat': 49.0044129,
+		'lon': 2.5769430,
+        'description': '5/10. I feel very neutral about this airport.'
+	},
+	{
+		'title':'Will Rogers World Airport',
+		'lat': 35.3940895,
+		'lon': -97.5959760,
+        'description': '?/10. I do not know what to rate this one. I have only been here once, and it was for an emergency landing (one of the passengers on my flight needed medical attention). I was not intending to be in Oklahoma, so that was a downside. Upside is we were able to safely make the landing, so shoutout to Will Rogers Intl.'
+	},
+    {
+		'title':'Narita Intl. Airport',
+		'lat': 35.7737902,
+		'lon': 140.3916496,
+        'description': '8.5/10. I have had lots of layovers here, and it is quite a lovely airport. Lots of food options, great signage. No criticisms here. My brother has lost about 4 jackets in the Narita airport so their lost and found knows him well.'
+	},
+    {
+		'title':'Keflavik Intl. Airport',
+		'lat': 63.9943560,
+		'lon': -22.6227771,
+        'description': '4/10. Not the biggest fan of this airport. The food is super pricey. I also almost lost my back brace here one time, and though that was entirely my fault, I hold all the ranking power here and will use it with reckless abandon.'
+	},
+];
+
+    airports.forEach(function(item){
+        var marker = L.marker([item.lat, item.lon], {icon: airplane}).addTo(map)
+        .bindPopup("<b>" + item.title + "</b>" + "<br>" + item.description)
+        .openPopup();
+    });
+ 
+      /*  var marker1 = L.marker([47.4982,-122.4779]).addTo(map)
+            .bindPopup('Vashon Island<br> Where Cameron is sitting this very moment')
+           
+ 
+        var marker2 = L.marker([47.5096,-122.46404]).addTo(map)
+            .bindPopup('Vashon Island Ferry Terminal<br> Where Cameron will get on a boat at 4am tomorrow')
+           
+ 
+        var marker3 = L.marker([47.443558,-122.3000149]).addTo(map)
+            .bindPopup('SeaTac Airport<br> Where Cameron will fly to LA just in time for DH151 tomorrow') */
+           
+    </script>
+</body>
+</html>
