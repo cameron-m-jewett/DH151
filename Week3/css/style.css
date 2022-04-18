@@ -21,8 +21,9 @@ body {
 	grid-area: header;
 	padding:10px;
 	background-color: #333;
-	color: white;
-	font-size: 2em;
+	color: rgb(55, 116, 230);
+	font-size: 4em;
+	text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
 }
 
 .sidebar {
@@ -39,8 +40,8 @@ body {
 
 .sidebar-item {
     padding: 10px; /* adds inner padding */
-    background: gainsboro; /* background color */
-    border: 1px solid gray; /* border width, style, and color */
+    background: rgb(44, 119, 230); /* background color */
+    border: 1px solid rgb(191, 207, 234); /* border width, style, and color */
     margin: 5px; /* outer padding */
 	cursor: pointer; /* change cursor to hand on hover */
 }

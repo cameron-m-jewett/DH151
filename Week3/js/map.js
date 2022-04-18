@@ -27,7 +27,7 @@ let data = [
     },
     {
         'id': 3,
-        'title':'Charles De Gaulle',
+        'title':'Charles De Gaulle Airport',
 		'lat': 49.0044129,
 		'lon': 2.5769430,
         'image':'cdg.jpg',
