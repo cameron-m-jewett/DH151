@@ -78,7 +78,8 @@ let myMarkers = L.featureGroup();
 // loop through data
 data.forEach(function(item){
 	// create marker
-	let marker = L.marker([item.lat,item.lon]).bindPopup("<b>" + item.title + "</b>" + "<br>" + item.description + "</br>")
+	//let marker = L.marker([item.lat,item.lon]).bindPopup("<b>" + item.title + "</b>" + "<br>" + item.description + "</br>")
+    let marker = L.marker([item.lat,item.lon]).bindPopup("<b>" + item.title + "</b>" + "<br>" + item.description + "</br>" + `<img src=${item.image} width="150" height="150"></div>`)
 	// add marker to featuregroup
 	myMarkers.addLayer(marker)
 
