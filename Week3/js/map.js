@@ -2,44 +2,60 @@
 let data = [
     {
         'id': 0,
-        'title':'Osaka',
-        'lat': 34.6937,
-        'lon': 135.5023,
+        'title':'LAX',
+		'lat': 33.9438347,
+		'lon': -118.4088622,
         'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Osaka_Castle_02bs3200.jpg/320px-Osaka_Castle_02bs3200.jpg',
-        'description': "Osaka is a large port city and commercial center on the Japanese island of Honshu. It's known for its modern architecture, nightlife and hearty street food. The 16th-century shogunate Osaka Castle, which has undergone several restorations, is its main historical landmark. It's surrounded by a moat and park with plum, peach and cherry-blossom trees. Sumiyoshi-taisha is among Japan’s oldest Shinto shrines. ― Google"
+        'description': "5/10. Somehow always make it on time for my flight, but it never feels like I will. The traffic at LAX is legendarily bad. Security is always faster than expected though."
 
     },
     {
         'id': 1,
-        'title':'Cali',
-        'lat': 3.4516,
-        'lon': -76.5320,
+        'title':'Seatac Airport',
+		'lat': 47.443558,
+		'lon': -122.3000149,
         'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Pascual_Guerrero_U-20WC_2011_CMR-NZL.JPG/320px-Pascual_Guerrero_U-20WC_2011_CMR-NZL.JPG',
-        'description':"Cali is a Colombian city in the Valle del Cauca department, southwest of Bogotá. It’s known for salsa dancing and there are many clubs in the suburb of Juanchito. In Cali’s oldest quarter, the neoclassical San Pedro Cathedral houses paintings of the Quito School. Nearby is the 18th- and 19th-century San Francisco Religious Complex. La Merced Chapel is where the first mass was held after Cali was founded in 1536. ― Google"
+        'description':"7.5/10. Had to give it extra points because it is my home airport. Security lines can take way too long, but I like the vibes of Seatac a lot. And environmentally it is a pretty sustainable airport."
     },
     {
         'id': 2,
-        'title':'Bangkok',
-        'lat': 13.7563,
-        'lon': 100.5018,
+        'title':'Changi Airport',
+		'lat': 1.3658211,
+		'lon': 103.9921111,
         'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Bangkok_skytrain_sunset.jpg/320px-Bangkok_skytrain_sunset.jpg',
-        'description':"Bangkok, Thailand’s capital, is a large city known for ornate shrines and vibrant street life. The boat-filled Chao Phraya River feeds its network of canals, flowing past the Rattanakosin royal district, home to opulent Grand Palace and its sacred Wat Phra Kaew Temple. Nearby is Wat Pho Temple with an enormous reclining Buddha and, on the opposite shore, Wat Arun Temple with its steep steps and Khmer-style spire. ― Google"
+        'description':"9.5/10. This is maybe the best airport I have been to. Awesome vibes, there are a ton of food options, the lines never take very long. Great airport."
     },
     {
         'id': 3,
-        'title':'Tokyo',
-        'lat': 35.6762,
-        'lon': 139.6503,
+        'title':'Charles De Gaulle',
+		'lat': 49.0044129,
+		'lon': 2.5769430,
         'image':'https://www.stofficetokyo.ch/sites/default/files/styles/featured_image_840x572_/public/2019-01/icu_dronei_34ab_170430-42_r.jpg?itok=mkG94UWD',
-        'description':"Tokyo, Japan’s busy capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples. The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods. The Imperial Palace sits amid large public gardens. The city's many museums offer exhibits ranging from classical art (in the Tokyo National Museum) to a reconstructed kabuki theater (in the Edo-Tokyo Museum). ― Google"
+        'description':"5/10. I feel very neutral about this airport."
     },
     {
         'id': 4,
-        'title':'Los Angeles',
-        'lat': 34.0522,
-        'lon': -118.2437,
+        'title':'Will Rogers World Airport',
+		'lat': 35.3940895,
+		'lon': -97.5959760,
         'image':'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/UCLA_Royce_Hall.jpg/320px-UCLA_Royce_Hall.jpg',
-        'description':"Los Angeles is a sprawling Southern California city and the center of the nation’s film and television industry. Near its iconic Hollywood sign, studios such as Paramount Pictures, Universal and Warner Brothers offer behind-the-scenes tours. On Hollywood Boulevard, TCL Chinese Theatre displays celebrities’ hand- and footprints, the Walk of Fame honors thousands of luminaries and vendors sell maps to stars’ homes. ― Google"
+        'description':"?/10. I do not know what to rate this one. I have only been here once, and it was for an emergency landing (one of the passengers on my flight needed medical attention). I was not intending to be in Oklahoma, so that was a downside. Upside is we were able to safely make the landing, so shoutout to Will Rogers Intl."
+    },
+    {
+        'id': 5,
+        'title':'Narita Intl. Airport',
+		'lat': 35.7737902,
+		'lon': 140.3916496,
+        'image':'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/UCLA_Royce_Hall.jpg/320px-UCLA_Royce_Hall.jpg',
+        'description':"8.5/10. I have had lots of layovers here, and it is quite a lovely airport. Lots of food options, great signage. No criticisms here. My brother has lost about 4 jackets in the Narita airport so their lost and found knows him well."
+    },
+    {
+        'id': 6,
+        'title':'Keflavik Intl. Airport',
+		'lat': 63.9943560,
+		'lon': -22.6227771,
+        'image':'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/UCLA_Royce_Hall.jpg/320px-UCLA_Royce_Hall.jpg',
+        'description':"4/10. Not the biggest fan of this airport. The food is super pricey. I also almost lost my back brace here one time, and though that was entirely my fault, I hold all the ranking power here and will use it with reckless abandon."
     },
 ]
 
@@ -62,8 +78,7 @@ let myMarkers = L.featureGroup();
 // loop through data
 data.forEach(function(item){
 	// create marker
-	let marker = L.marker([item.lat,item.lon]).bindPopup(item.title)
-
+	let marker = L.marker([item.lat,item.lon]).bindPopup("<b>" + item.title + "</b>" + "<br>" + item.description + "</br>")
 	// add marker to featuregroup
 	myMarkers.addLayer(marker)
 
