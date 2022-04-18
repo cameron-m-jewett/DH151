@@ -52,6 +52,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // before looping the data, create an empty FeatureGroup
 let myMarkers = L.featureGroup();
 
+ // function to fly to a location by a given id number
+ function flyToIndex(index){
+	map.flyTo([data[index].lat,data[index].lon],12)
+    // open the popup
+    myMarkers.getLayers()[index].openPopup()
+}
+
 // loop through data
 data.forEach(function(item){
 	// create marker
@@ -63,10 +70,6 @@ data.forEach(function(item){
 	// add data to sidebar with onclick event
 	$('.sidebar').append(`<div class="sidebar-item" onclick="flyToIndex(${item.id})">${item.title}</div>`)
 
-    // function to fly to a location by a given id number
-function flyToIndex(index){
-	map.flyTo([data[index].lat,data[index].lon],12)
-}
 })
 
 // after loop, add the FeatureGroup to map
@@ -79,14 +82,6 @@ let layers = {
 
 // add layer control box
 L.control.layers(null,layers).addTo(map)
-
-/*// function to fly to a location by a given id number
-function flyByIndex(index){
-	map.flyTo([data[index].lat,data[index].lon],12)
-
-	// open the popup
-	myMarkers.getLayers()[index].openPopup()
-}*/
 
 // make the map zoom to the extent of markers
 map.fitBounds(myMarkers.getBounds());
