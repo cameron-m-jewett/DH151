@@ -49,7 +49,7 @@ function mapCSV(data){
 		radius: 5,
 		weight: 1,
 		color: 'white',
-		fillColor: 'dodgerblue',
+		fillColor: 'red',
 		fillOpacity: 1
 	}
 
@@ -58,7 +58,7 @@ function mapCSV(data){
 		// create marker
 		let marker = L.circleMarker([item.INTPTLAT,item.INTPTLON], circleOptions)
         .on('mouseover',function(){
-			this.bindPopup(`${item.CENSUSTRACT} <br> Seattle <br> Median House Value: ${item.MEDHOUSEVAL}`).openPopup()
+			this.bindPopup(`${item.CENSUSTRACT} <br> ${item.MEDHOUSEVAL}`).openPopup()
 		})
 
 		// add marker to featuregroup		
