@@ -27,7 +27,7 @@ function createMap(lat,lon,zl){
 
 
 // function to read csv data
-function readCSV(path){
+function readCSV(data){
 	Papa.parse(path, {
 		header: true,
 		download: true,
@@ -46,7 +46,7 @@ function mapCSV(data){
 	
 	// circle options
 	let circleOptions = {
-		radius: 10,
+		radius: 5,
 		weight: 1,
 		color: 'white',
 		fillColor: 'dodgerblue',
@@ -56,9 +56,9 @@ function mapCSV(data){
 	// loop through each entry
 	data.data.forEach(function(item,index){
 		// create marker
-		let marker = L.circleMarker([item.INTPTLAT,item.INTPTLON],circleOptions)
+		let marker = L.circleMarker([item.INTPTLAT,item.INTPTLON], circleOptions)
         .on('mouseover',function(){
-			this.bindPopup(`${item['CENSUSTRACT']}<br> Seattle <br> Median House Value: ${item['2020_MEDHOUSEVAL']}`).openPopup()
+			this.bindPopup(`${item.CENSUSTRACT} <br> Seattle <br> Median House Value: ${item.MEDHOUSEVAL}`).openPopup()
 		})
 
 		// add marker to featuregroup		
