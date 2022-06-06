@@ -36,7 +36,7 @@ function createMap(lat,lon,zl){
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(map);
 
-	L.marker([37.75181513732688, -122.20057798867332]).addTo(map);
+	L.marker([47.5911656, -122.3327999]).addTo(map);
 }
 
 // function to get the geojson data
