@@ -8,7 +8,6 @@ let path = '';
 // put this in your global variables
 let geojsonPath = 'data/gis/Seattle.geojson';
 let geojson_data;
-let geojson_data_right;
 let geojson_layer;
 
 let brew = new classyBrew();
@@ -95,7 +94,7 @@ function mapGeoJSON(field,num_classes,color,scheme){
     // // create the infopanel
 	createInfoPanel();
 
-	createTooltip();
+	/*createTooltip();*/
 
 }
 
@@ -208,7 +207,7 @@ function createInfoPanel(){
 
 // L.control.sideBySide(geojson_data, geojson_data_right).addTo(map);
 
-function createTooltip(){
+/*function createTooltip(){
 	tool_tip.onAdd = function (map) {
 		this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
 		this.update();
@@ -234,4 +233,4 @@ function createTooltip(){
 
 function navFlyToIndex(lat,lon){
 	map.flyTo([lat,lon],12)
-};
+};*/
